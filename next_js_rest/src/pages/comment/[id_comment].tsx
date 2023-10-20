@@ -1,11 +1,9 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import css from '../../../styles/Home.module.css'
 import BoxGetComment from '../../components/GetComponents/GetComment'
-import { BoxGetUser } from '../../components/GetComponents/GetUser'
 import { Header } from '../../components/Layout/Header'
+import { useAuth } from '../../context/AuthProvider'
 
 export const GetComment: NextPage = () => {
   const router = useRouter()
@@ -15,14 +13,11 @@ export const GetComment: NextPage = () => {
   const { formation_id_comment } = router.query
   const { user_id_comment } = router.query
 
+  const { logout } = useAuth()
+
   return (
     <div className={css.container}>
-      <Header
-        isLoggedIn={false}
-        onLogout={function (): void {
-          throw new Error('Function not implemented.')
-        }}
-      />
+      <Header isLoggedIn={false} onLogout={logout} />
       <main className={css.main}>
         {id_comment && (
           <BoxGetComment

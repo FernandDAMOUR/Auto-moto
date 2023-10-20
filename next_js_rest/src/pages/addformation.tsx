@@ -11,44 +11,27 @@ const AddFormation: NextPage = () => {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [price, setPrice] = useState(0)
-  // const submit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault()
-  //   await fetch('http://localhost:4000/formations/create', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       Authorization: `Bearer ${localStorage.getItem('token')}`,
-  //       'Access-Control-Allow-Origin': '*'
-  //     },
-
-  //     body: JSON.stringify({
-  //       title,
-  //       description,
-  //       price
-  //     })
-  //   })
-
-  //   console.log('body', title, description, price)
-  //   await router.push('/formations')
-  // }
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const form = {
-      title,
-      description,
-      price
-    }
+    await fetch('http://localhost:4000/formations/create', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Access-Control-Allow-Origin': '*'
+      },
 
-    console.log('body', form)
-    try {
-      // Utilisez la fonction createFormation pour créer la formation
-      const newFormation = await createFormation(form)
-      console.log('Formation créée', newFormation)
-      await router.push('/formations')
-    } catch (error) {
-      console.error('Erreur lors de la création de la formation', error)
-    }
+      body: JSON.stringify({
+        title,
+        description,
+        price
+      })
+    })
+
+    console.log('body', title, description, price)
+    await router.push('/formations')
   }
+  
 
   return (
     <div className={css.container}>
@@ -112,7 +95,7 @@ const AddFormation: NextPage = () => {
               </div>
               <div>
                 <button className={css.btn_addformation} type="submit">
-                  {''} Ajouter{''}
+                  {'Ajouter'}
                 </button>
               </div>
             </div>
