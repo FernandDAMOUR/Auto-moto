@@ -14,6 +14,13 @@ export const GetComment: NextPage = () => {
   const { user_id_comment } = router.query
 
   const { logout } = useAuth()
+  // Convertir les valeurs en chaînes de caractères si elles sont des tableaux
+const idCommentString = Array.isArray(id_comment) ? id_comment[0] : id_comment;
+const ratingCommentString = Array.isArray(rating_comment) ? rating_comment[0] : rating_comment;
+const contentCommentString = Array.isArray(content_comment) ? content_comment[0] : content_comment;
+const formationIdCommentString = Array.isArray(formation_id_comment) ? formation_id_comment[0] : formation_id_comment;
+const userIdCommentString = Array.isArray(user_id_comment) ? user_id_comment[0] : user_id_comment;
+
 
   return (
     <div className={css.container}>
@@ -21,12 +28,12 @@ export const GetComment: NextPage = () => {
       <main className={css.main}>
         {id_comment && (
           <BoxGetComment
-            id={id_comment}
-            rating={rating_comment}
-            content={content_comment}
-            formation_id={formation_id_comment}
-            user_id={user_id_comment}
-          />
+          id={idCommentString || ''}
+          rating={ratingCommentString}
+          content={contentCommentString}
+          formation_id={formationIdCommentString}
+          user_id={userIdCommentString}
+        />
         )}
       </main>
     </div>

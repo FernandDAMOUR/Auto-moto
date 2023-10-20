@@ -20,6 +20,9 @@ const GetFormation: NextPage = () => {
 
   const { logout } = useAuth()
 
+
+  const priceFormation = Array.isArray(price_formation) ? price_formation[0] : price_formation;
+
   return (
     <div className={css.container}>
       <Header isLoggedIn={false} onLogout={logout} />
@@ -39,7 +42,7 @@ const GetFormation: NextPage = () => {
             id={id_formation}
             title={title_formation}
             description={description_formation}
-            price={price_formation || 0}
+            price={typeof priceFormation === 'string' ? parseFloat(priceFormation) : priceFormation || 0}
           />
         )}
       </main>

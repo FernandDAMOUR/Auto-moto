@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import css from '../../styles/Home.module.css'
 import { Header } from '../components/Layout/Header'
+import Link from 'next/link'
 
 const Home: NextPage = () => {
   return (
@@ -23,18 +24,26 @@ const Home: NextPage = () => {
         </h1>
 
         <div className={css.grid}>
-          <a href="/register" className={css.card}>
+          <Link href="/register" className={css.card}>
+            <div>
             <h2>S&apos;incrire</h2>
             <p>Inscrivez-vous pour commencer votre formation de conduite</p>
-          </a>
-          <a href="/login" className={css.card}>
+            </div>
+          </Link>
+          <Link href="/login" className={css.card}>
+            <div>
             <h2>Se connecter &rarr;</h2>
             <p>connectez-vous pour continuer votre formation de conduite</p>
-          </a>
-          <a href="/formations" className={css.card}>
-            <h2>Nos Formations </h2>
-            <p>Découvrez toutes nos formations </p>
-          </a>
+            </div>
+          </Link>
+          <Link href="/formations" className={css.card}>
+            <div>
+              <h2>Nos Formations </h2>
+              <p>Découvrez toutes nos formations </p>
+
+            </div>
+            
+          </Link>
         </div>
       </main>
     </div>

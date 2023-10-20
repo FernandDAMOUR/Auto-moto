@@ -7,6 +7,7 @@ import BoxFormation from '../components/Formations'
 import { getallComments, IComment } from '../services/Comments/CommentsServices'
 import { getallFormations, IFormation } from '../services/Formations/FormationsService'
 import { Header } from '../components/Layout/Header'
+import Link from 'next/link'
 
 const Formations: NextPage = () => {
   const [data_formation, setData_formation] = useState<IFormation[]>()
@@ -34,31 +35,29 @@ const Formations: NextPage = () => {
         <div className={css.div_formations}>
           <h1 className={css.title_formation}>Nos Formations</h1>
           <div className={css.box_formations}>
-            {data_formation &&
-              data_formation.map((formation: { _id: string; title: string; price: number }) => {
-                return <BoxFormation id={formation._id} title={formation.title} price={formation.price}></BoxFormation>
-              })}
+          {data_formation &&
+            data_formation.map((formation: IFormation) => {
+              return <BoxFormation id={formation._id || ''} title={formation.title} price={formation.price}></BoxFormation>
+            })}
           </div>
           <h1 className={css.title_comment}>Les avis sur nos formations</h1>
           <div className={css.box_comments}>
             {data_comment &&
-              data_comment.map(
-                (comment: { _id: string; content: string; rating: number; user_id: string; formation_id: string }) => {
-                  return (
-                    <BoxComment
-                      id={comment._id}
-                      rating={comment.rating}
-                      content={comment.content}
-                      user_id={comment.user_id}
-                      formation_id={comment.formation_id}
-                    ></BoxComment>
-                  )
-                }
-              )}
-          </div>
-          <a href="/addcomment">
+              data_comment.map((comment: IComment) => {
+                return (
+                  <BoxComment
+                    id={comment._id}
+                    content={comment.content || ''}
+                    rating={comment.rating || 0}
+                    user_id={comment.user_id || ''}
+                    formation_id={comment.formation_id ||''}
+                  />
+                );
+              })}
+           </div>
+          <Link href="/addcomment">
             <button className={css.btn_addcomment}>Ajouter un commentaire</button>
-          </a>
+          </Link>
         </div>
       </main>
     </div>

@@ -5,6 +5,9 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import css from '../../styles/Home.module.css'
 import { IUser, register } from '../services/Users/UsersService'
+import { Header } from '../components/Layout/Header'
+import { useAuth } from '../context/AuthProvider'
+import Link from 'next/link'
 
 const Register: NextPage = () => {
   const [name, setName] = useState('')
@@ -32,33 +35,11 @@ const Register: NextPage = () => {
 
   console.log(submit)
 
+  const {logout}= useAuth()
+
   return (
     <div className={css.container}>
-      <Head>
-        <title> AUTO-MOTO</title>
-        <link rel="icon" href="/AUTO-MOTO.ico" type="favicon" />
-        <meta charSet="utf-8" />
-      </Head>
-      <header className={css.header}>
-        <a href="/formations">
-          <img className={css.logo_img} src="/AUTO-MOTO.ico" alt="" />
-        </a>
-        <div className={css.div_header_title}>
-          <label className={css.header_title_auto}>AUTO</label>
-          <label className={css.header_title__}>-</label>
-          <label className={css.header_title_moto}>MOTO</label>
-        </div>
-        <div className={css.div_header_login}>
-          <a href="/login">
-            <label className={css.login_label}>Login</label>
-          </a>
-        </div>
-        <div className={css.div_header_register}>
-          <a href="/register">
-            <label className={css.register_label}>Register</label>
-          </a>
-        </div>
-      </header>
+      <Header isLoggedIn={false} onLogout={logout}/>
 
       <main className={css.main}>
         <div className={css.div_signup}>
@@ -123,10 +104,10 @@ const Register: NextPage = () => {
                 </button>
               </div>
               <div className={css.div_connect}>
-                <a href="/login" className={css.connect}>
-                  {' '}
-                  Vous avez déjà un compte? Connectez-vous !!!!!
-                </a>
+                <Link href="/login" className={css.connect}>
+                  {' Vous avez déjà un compte? Connectez-vous !!!!!'}
+                  
+                </Link>
               </div>
             </div>
           </form>

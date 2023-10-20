@@ -37,6 +37,7 @@ import { useState, useEffect } from 'react'
 import css from '../../../styles/Header.module.css' // Assurez-vous d'importer vos styles CSS appropriés
 import router from 'next/router'
 import { useAuth } from '../../context/AuthProvider'
+import Link from 'next/link'
 
 interface HeaderProps {
   isLoggedIn: boolean
@@ -77,9 +78,9 @@ export const Header: React.FC<HeaderProps> = () => {
   // Contenu du menu déroulant
   const dropdownContent = isDropdownOpen && (
     <div className={css.dropdownContent}>
-      <a href="/formations">Nos formations</a>
-      <a href="/users">Tous les utilisateurs</a>
-      <a href="/addformation">Ajouter une formation</a>
+      <Link href="/formations">Nos formations</Link>
+      <Link href="/users">Tous les utilisateurs</Link>
+      <Link href="/addformation">Ajouter une formation</Link>
     </div>
   )
 
@@ -105,9 +106,9 @@ export const Header: React.FC<HeaderProps> = () => {
       <div className={css.dropdown}>
         <button onClick={toggleDropdown}>Menu</button>
         <div className={dropdownClass}>
-          <a href="/formations">Nos formations</a>
-          <a href="/users">Tous les utilisateurs</a>
-          <a href="/addformation">Ajouter une formation</a>
+          <Link href="/formations">Nos formations</Link>
+          <Link href="/users">Tous les utilisateurs</Link>
+          <Link href="/addformation">Ajouter une formation</Link>
         </div>{' '}
       </div>
       {isLoggedIn ? (
