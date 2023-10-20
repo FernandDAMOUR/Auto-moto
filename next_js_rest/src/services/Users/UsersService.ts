@@ -24,29 +24,10 @@ export const register = async (IUser: IUser): Promise<IUser[]> => {
 // export const login = async (email: string, password: string): Promise<void> => {
 //   try {
 //     const response = await api.post('/users/login', { email, password })
-//     const token = response.headers.authorization
-//     const user = response.data.user
+//     const token = response.data.token // Utilisez response.data.token pour extraire le token
 
 //     if (token) {
-//       login(token, user.name) // Appel de la fonction de connexion avec le token et le nom de l'utilisateur
-//       localStorage.setItem('token', token)
-//     }
-//   } catch (error) {
-//     throw error
-//   }
-// }
-
-// export const login = async (email: string, password: string): Promise<void> => {
-//   try {
-//     const response = await api.post('/users/login', { email, password })
-//     const token = response.headers.authorization
-//     const user = response.data.user
-
-//     if (token) {
-//       // Vous pouvez appeler la fonction de connexion ici avec le token et le nom de l'utilisateur
-//       // login(token, user.name);
-
-//       // Assurez-vous que localStorage.setItem est appelé dans un environnement de navigateur
+//       // Stockez le token dans le localStorage
 //       if (typeof localStorage !== 'undefined') {
 //         localStorage.setItem('token', token)
 //       }
@@ -60,33 +41,18 @@ export const login = async (email: string, password: string): Promise<void> => {
   try {
     const response = await api.post('/users/login', { email, password })
     const token = response.data.token // Utilisez response.data.token pour extraire le token
-
+    const userName = response.data.user.name
     if (token) {
       // Stockez le token dans le localStorage
-      if (typeof localStorage !== 'undefined') {
-        localStorage.setItem('token', token)
-      }
+      localStorage.setItem('token', token)
+      console.log(response.data.user.name, 'blablabla')
+      localStorage.setItem('userName', userName)
     }
   } catch (error) {
     throw error
   }
 }
 
-// export const login = async (email: string, password: string): Promise<IUser> => {
-//   try {
-//     const response = await api.post('/users/login', { email, password })
-//     const token = response.data.token
-//     const user = response.data.user
-//     console.log(token)
-
-//     if (token) {
-//       login(token, user.name)
-//       localStorage.setItem('token', token)
-//     }
-//   } catch (error) {
-//     throw error
-//   }
-// }
 export const updateUser = async (IUser: IUser): Promise<IUser[]> => {
   return await api.put('/users/update/' + IUser._id).then((response) => response.data.user)
 }

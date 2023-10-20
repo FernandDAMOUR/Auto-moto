@@ -2,6 +2,11 @@ import axios from 'axios'
 
 export const createApiInstance = () => {
   const isBrowser = typeof window !== 'undefined'
+  let token = null
+
+  if (isBrowser) {
+    token = localStorage.getItem('token')
+  }
 
   const api = axios.create({
     baseURL: 'http://localhost:4000',
@@ -9,15 +14,15 @@ export const createApiInstance = () => {
     headers: {
       accept: 'application/json',
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Origin': '*',
+      Authorization: `Bearer ${token}`
     }
   })
 
-  if (isBrowser) {
-    const token = localStorage.getItem('token')
-    if (token) {
-      api.defaults.headers.common['Authorization'] = `Bearer ${token}`
-    }
+  // Vérifie si un token a été trouvé dans localStorage (uniquement côté client)
+  if (isBrowser && token) {
+    // Ajoute l'autorisation au header
+    api.defaults.headers.common['Authorization'] = `Bearer ${token}`
   }
 
   return api

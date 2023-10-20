@@ -37,3 +37,5 @@ export const GetComment: NextPage = () => {
     </div>
   )
 }
+
+export default GetComment

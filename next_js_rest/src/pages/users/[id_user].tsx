@@ -4,7 +4,7 @@ import css from '../../../styles/GetUser.module.css'
 import { BoxGetUser } from '../../components/GetComponents/GetUser'
 import { Header } from '../../components/Layout/Header'
 
-export const GetUser: NextPage = () => {
+const GetUser: NextPage = () => {
   const router = useRouter()
   const { id_user } = router.query
   const { name_user } = router.query
@@ -36,3 +36,4 @@ export const GetUser: NextPage = () => {
     </div>
   )
 }
+export default GetUser

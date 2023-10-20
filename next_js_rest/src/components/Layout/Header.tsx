@@ -33,7 +33,7 @@
 // }
 
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import css from '../../../styles/Header.module.css' // Assurez-vous d'importer vos styles CSS appropriés
 import router from 'next/router'
 import { useAuth } from '../../context/AuthProvider'
@@ -52,11 +52,16 @@ export const Header: React.FC<HeaderProps> = () => {
   }
   const handleLogOut = () => {
     logout()
+    setIsLoggedIn(false)
   }
 
   const { token, login, userName, logout } = useAuth()
 
-  const isLoggedIn = token !== null
+  const [isLoggedIn, setIsLoggedIn] = useState(token !== null)
+
+  useEffect(() => {
+    setIsLoggedIn(token !== null)
+  }, [token])
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -108,7 +113,7 @@ export const Header: React.FC<HeaderProps> = () => {
       {isLoggedIn ? (
         <div className={css.login}>
           <p>Bienvenue, {userName} !</p>
-          <button onClick={logout}>Déconnexion</button>
+          <button onClick={handleLogOut}>Déconnexion</button>
         </div>
       ) : (
         <>
