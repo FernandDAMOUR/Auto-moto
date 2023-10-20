@@ -1,0 +1,98 @@
+/* Header.module.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333; /* Couleur d'arrière-plan de l'en-tête */
+  color: white; /* Couleur du texte */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.siteName {
+  margin-left: 10px;
+}
+
+.search {
+  flex-grow: 1;
+  margin: 0 20px;
+}
+
+.inputField {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+}
+
+.submitButton {
+  background-color: #007bff; /* Couleur du bouton de recherche */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.dropdownOpen {
+  max-height: 5%; /* La hauteur maximale que vous souhaitez pour votre dropdown */
+  transition: max-height 0.3s ease-in-out;
+}
+
+.dropdownContent {
+  position: absolute;
+  top: 30px; /* Ajustez la position verticale du menu déroulant */
+  right: 0;
+  background-color: #333; /* Couleur de fond du menu déroulant */
+  border: 1px solid #555; /* Bordure du menu déroulant */
+  border-radius: 4px;
+  padding: 10px;
+  min-width: 150px;
+  display: none;
+}
+
+.dropdownAppear {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.dropdownOpen {
+  max-height: 500px; /* La hauteur maximale que vous souhaitez pour votre dropdown */
+  transition: max-height 0.3s ease-in-out;
+}
+
+.dropdownContent {
+  display: flex;
+  flex-direction: column;
+  align-items: first baseline;
+}
+
+.logout button {
+  background-color: #dc3545; /* Couleur du bouton de déconnexion */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+/* Style pour le bouton de déconnexion au survol */
+.logout button:hover {
+  background-color: #c82333; /* Couleur au survol du bouton de déconnexion */
+}

@@ -1,0 +1,582 @@
+.container {
+  background-image: url('/back_image.jpg');
+  padding: 0 2rem;
+  overflow: hidden;
+  background-size: cover;
+  min-height: 58.5rem;
+}
+
+.header {
+  display: flex;
+  background-color: white;
+  height: 100px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.logo_img {
+  height: 100px;
+  border-bottom-left-radius: 12px;
+}
+
+.div_header_title {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+}
+
+.header_title_auto {
+  font-weight: bold;
+  font-size: 40px;
+  color: red;
+}
+
+.header_title__ {
+  color: black;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.header_title_moto {
+  color: blue;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.title_auto {
+  font-weight: bold;
+  font-size: 60px;
+  color: red;
+}
+
+.title__ {
+  color: white;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.title_moto {
+  color: blue;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.main {
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.text_home a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.text_home a:hover,
+.text_home a:focus,
+.text_home a:active {
+  text-decoration: underline;
+}
+
+.text_home {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.text_home,
+.description {
+  text-align: center;
+}
+
+.description {
+  margin: 4rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family:
+    Menlo,
+    Monaco,
+    Lucida Console,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,
+    Courier New,
+    monospace;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+
+.card {
+  background-color: black;
+  margin: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  color: white;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+  max-width: 300px;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #0070f3;
+  border: 2px solid red;
+  outline: 2px solid blue;
+}
+
+.card h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .card,
+  .footer {
+    border-color: #222;
+  }
+
+  .code {
+    background: #111;
+  }
+
+  .logo img {
+    filter: invert(1);
+  }
+}
+
+.div_signin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  border-radius: 30px;
+  background-color: white;
+  height: 600px;
+  width: 600px;
+}
+
+.div_signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 30px;
+  background-color: white;
+  height: 700px;
+  width: 650px;
+}
+
+.div_formations {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 30px;
+  background-color: white;
+  margin-top: -17px;
+  min-height: 45.4rem;
+  width: 96rem;
+}
+
+.div_getcomment,
+.div_getuser,
+.div_getformation {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 30px;
+  background-color: white;
+  margin-top: -17px;
+  min-height: 45.4rem;
+  width: 80%;
+}
+
+.div_menu {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background-color: white;
+  margin-top: 100px;
+  height: 500px;
+  width: 500px;
+}
+
+.div_addformation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+  border-radius: 30px;
+  background-color: white;
+  height: 700px;
+  width: 700px;
+}
+
+.div_users {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 30px;
+  background-color: white;
+  margin-top: -17px;
+  min-height: 45.4rem;
+  width: 100rem;
+}
+
+.div_form_signin {
+  display: flex;
+  flex-direction: column;
+  justify-content: centers;
+  align-items: center;
+}
+
+.div_form_signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: centers;
+  align-items: center;
+}
+
+.div_label_form {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.h1_signin {
+  font-size: 50px;
+  margin-top: 50px;
+  background: -webkit-linear-gradient(darkblue, red);
+  font-weight: bold;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 100px;
+}
+
+.h1_signup {
+  font-size: 50px;
+  margin-top: 35px;
+  background: -webkit-linear-gradient(darkblue, red);
+  font-weight: bold;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 35px;
+}
+
+.h1_getcomment,
+.h1_getformation,
+.h1_getuser {
+  font-size: 35px;
+  margin-top: 75px;
+  background: -webkit-linear-gradient(darkblue, red);
+  font-weight: bold;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 35px;
+}
+
+.label_form_up {
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  width: 260px;
+}
+
+.label_getcomment,
+.label_getformation,
+.label_getuser {
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+  width: 70%;
+}
+
+.box_comment,
+.box_getformation,
+.box_getuser {
+  display: flex;
+  justify-content: center;
+  margin: 25px;
+  align-items: center;
+  padding: 20px;
+  flex-direction: column;
+  width: 90%;
+  height: 50%;
+}
+
+.label_form_in {
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  width: 210px;
+}
+
+.input_form {
+  color: black;
+  width: 250px;
+  border-radius: 7px;
+  border: 2px solid red;
+  outline: 2px solid blue;
+  background-color: white;
+}
+
+.btn_signin {
+  margin-top: 55px;
+  height: 50px;
+  font-size: 25px;
+  background: -webkit-linear-gradient(darkblue, red);
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.div_btn {
+  display: flex;
+}
+
+.btn_delete {
+  margin-right: 20px;
+  margin-top: 55px;
+  height: 50px;
+  font-size: 20px;
+  background-color: red;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.btn_toggle {
+  margin-top: 55px;
+  height: 50px;
+  font-size: 20px;
+  background-color: blue;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.btn_signup {
+  margin-top: 10px;
+  height: 50px;
+  font-size: 25px;
+  background: -webkit-linear-gradient(darkblue, red);
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.btn_menu {
+  margin: 25px;
+  height: 60px;
+  font-size: 25px;
+  background: -webkit-linear-gradient(darkblue, red);
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 300px;
+}
+.btn_addcomment {
+  margin-top: -25px;
+  margin-bottom: 25px;
+  height: 60px;
+  font-size: 25px;
+  background: -webkit-linear-gradient(darkblue, red);
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.div_inscri {
+  margin-top: 35px;
+}
+
+.inscri {
+  color: black;
+  font-weight: bold;
+}
+
+.div_connect {
+  margin-top: 25px;
+}
+
+.connect {
+  color: black;
+  font-weight: bold;
+}
+
+.text_radio {
+  color: black;
+  font-size: 20px;
+  min-width: 20px;
+}
+
+.div_radio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box_radio {
+  margin-right: 10px;
+}
+
+.title_formation {
+  color: black;
+  font-size: 40px;
+}
+
+.title_comment {
+  color: black;
+  font-size: 40px;
+}
+
+.box_comments,
+.box_formations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 25rem;
+  margin-bottom: 75px;
+}
+
+.box_formation {
+  border: 2px solid red;
+  outline: 2px solid blue;
+  margin: 25px;
+  min-width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.box_comment {
+  border: 2px solid red;
+  outline: 2px solid blue;
+  margin: 25px;
+  min-width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.box_user {
+  border: 2px solid red;
+  outline: 2px solid blue;
+  width: 350px;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 25px;
+  flex-wrap: wrap;
+}
+
+.title_user {
+  color: black;
+  font-size: 40px;
+}
+
+.box_users {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85rem;
+  min-height: 35rem;
+  margin-bottom: 75px;
+}
+
+.p {
+  margin: auto;
+  font-weight: bold;
+  font-size: 24px;
+  color: black;
+}
+
+.title_menu {
+  color: black;
+  margin-left: 50px;
+}
+
+.div_modif {
+  border-radius: 12px;
+  border: 2px solid red;
+  outline: 2px solid blue;
+  height: 400px;
+  width: 500px;
+  margin: 40px;
+}
+
+.scrollableContent {
+  overflow-x: auto;
+}
