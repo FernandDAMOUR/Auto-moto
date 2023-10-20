@@ -18,6 +18,15 @@
   height: 100px;
   border-bottom-left-radius: 12px;
 }
+.momo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; 
+}
+
+.mosaic_item {
+  flex: 1 1 calc(33.33% - 16px); /* Répartit l'espace sur trois colonnes avec espacement */
+}
 
 .div_header_title {
   position: absolute;

@@ -26,23 +26,21 @@ const Home: NextPage = () => {
         <div className={css.grid}>
           <Link href="/register" className={css.card}>
             <div>
-            <h2>S&apos;incrire</h2>
-            <p>Inscrivez-vous pour commencer votre formation de conduite</p>
+              <h2>S&apos;incrire</h2>
+              <p>Inscrivez-vous pour commencer votre formation de conduite</p>
             </div>
           </Link>
           <Link href="/login" className={css.card}>
             <div>
-            <h2>Se connecter &rarr;</h2>
-            <p>connectez-vous pour continuer votre formation de conduite</p>
+              <h2>Se connecter &rarr;</h2>
+              <p>connectez-vous pour continuer votre formation de conduite</p>
             </div>
           </Link>
           <Link href="/formations" className={css.card}>
             <div>
               <h2>Nos Formations </h2>
               <p>Découvrez toutes nos formations </p>
-
-            </div>
-            
+            </div>   
           </Link>
         </div>
       </main>

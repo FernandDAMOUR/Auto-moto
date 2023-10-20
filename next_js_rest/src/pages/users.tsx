@@ -1,6 +1,4 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import css from '../../styles/Home.module.css'
 import BoxUser from '../components/User'
@@ -31,10 +29,10 @@ const Users: NextPage = () => {
           <h1 className={css.title_user}>Tous les utilisateurs</h1>
           {/* Ajoutez une div parent pour activer le défilement horizontal */}
 
-          <div className={css.box_users}>
-            <div className={css.scrollableContent}>
+          <div className={`${css.box_users} ${css.momo}`} >
               {data &&
                 data.map((user: IUser) => (
+                  <div key={user._id} className={css.mosaic_item}>
                   <BoxUser
                     key={user._id}
                     id={user._id || ''}
@@ -45,9 +43,9 @@ const Users: NextPage = () => {
                     perobt={user.permisObtenues || ''}
                     role={false}
                   />
+                  </div>
                 ))}
-            </div>
-          </div>
+                </div>
         </div>
       </main>
     </div>
